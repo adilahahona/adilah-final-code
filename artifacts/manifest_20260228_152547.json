@@ -1,0 +1,186 @@
+[
+  {
+    "algorithm": "linear_regression",
+    "artifact_name": "linear_regression_20260228_152547.joblib",
+    "artifact_path": "/Users/tzl/Downloads/Adilah_Project/artifacts/models/linear_regression_20260228_152547.joblib",
+    "artifact_checksum": "bb9d53f8f867c6cf44e0749b8e7fe40774970cde5c98c36d18b6557506fe28db",
+    "size_kb": 3.29,
+    "schema_version": "v1.0",
+    "feature_count": 40,
+    "train_metrics": {
+      "label": "train",
+      "mse": 51.995452880859375,
+      "rmse": 7.2107872580502175,
+      "mae": 5.9996466636657715,
+      "r2": 0.0
+    },
+    "val_metrics": {
+      "label": "val",
+      "mse": 58.136077880859375,
+      "rmse": 7.624701822422918,
+      "mae": 6.251485824584961,
+      "r2": -0.030945658683776855
+    },
+    "test_metrics": {
+      "label": "test",
+      "mse": 58.485103607177734,
+      "rmse": 7.647555400726283,
+      "mae": 6.463475227355957,
+      "r2": -0.038704872131347656
+    },
+    "hyperparameters": {},
+    "trained_at": "20260228_152547",
+    "status": "TRAINED"
+  },
+  {
+    "algorithm": "ridge",
+    "artifact_name": "ridge_20260228_152547.joblib",
+    "artifact_path": "/Users/tzl/Downloads/Adilah_Project/artifacts/models/ridge_20260228_152547.joblib",
+    "artifact_checksum": "4f23e8c78f44f3d54e0dfb70579820d12ae0eecc26a7a6d3303e403e17a11afd",
+    "size_kb": 3.13,
+    "schema_version": "v1.0",
+    "feature_count": 40,
+    "train_metrics": {
+      "label": "train",
+      "mse": 51.995452880859375,
+      "rmse": 7.2107872580502175,
+      "mae": 5.9996466636657715,
+      "r2": 0.0
+    },
+    "val_metrics": {
+      "label": "val",
+      "mse": 58.136077880859375,
+      "rmse": 7.624701822422918,
+      "mae": 6.251485824584961,
+      "r2": -0.030945658683776855
+    },
+    "test_metrics": {
+      "label": "test",
+      "mse": 58.485103607177734,
+      "rmse": 7.647555400726283,
+      "mae": 6.463475227355957,
+      "r2": -0.038704872131347656
+    },
+    "hyperparameters": {
+      "alpha": 1.0
+    },
+    "trained_at": "20260228_152547",
+    "status": "TRAINED"
+  },
+  {
+    "algorithm": "lasso",
+    "artifact_name": "lasso_20260228_152547.joblib",
+    "artifact_path": "/Users/tzl/Downloads/Adilah_Project/artifacts/models/lasso_20260228_152547.joblib",
+    "artifact_checksum": "884c65687e425372ae85651c11cb2b7139fb08a3a29b4e3c6fd2693bcb2a85bf",
+    "size_kb": 3.21,
+    "schema_version": "v1.0",
+    "feature_count": 40,
+    "train_metrics": {
+      "label": "train",
+      "mse": 51.995452880859375,
+      "rmse": 7.2107872580502175,
+      "mae": 5.9996466636657715,
+      "r2": 0.0
+    },
+    "val_metrics": {
+      "label": "val",
+      "mse": 58.136077880859375,
+      "rmse": 7.624701822422918,
+      "mae": 6.251485824584961,
+      "r2": -0.030945658683776855
+    },
+    "test_metrics": {
+      "label": "test",
+      "mse": 58.485103607177734,
+      "rmse": 7.647555400726283,
+      "mae": 6.463475227355957,
+      "r2": -0.038704872131347656
+    },
+    "hyperparameters": {
+      "alpha": 0.1,
+      "max_iter": 10000
+    },
+    "trained_at": "20260228_152547",
+    "status": "TRAINED"
+  },
+  {
+    "algorithm": "random_forest",
+    "artifact_name": "random_forest_20260228_152547.joblib",
+    "artifact_path": "/Users/tzl/Downloads/Adilah_Project/artifacts/models/random_forest_20260228_152547.joblib",
+    "artifact_checksum": "125c2f1b0e714718fd28a8ef04c17ccd758d44b900b3a7688e0950aa50e8f8aa",
+    "size_kb": 78.77,
+    "schema_version": "v1.0",
+    "feature_count": 40,
+    "train_metrics": {
+      "label": "train",
+      "mse": 51.99549852590877,
+      "rmse": 7.210790423102641,
+      "mae": 6.0001332427674186,
+      "r2": -8.238584472408661e-07
+    },
+    "val_metrics": {
+      "label": "val",
+      "mse": 58.11883306612518,
+      "rmse": 7.623570886803977,
+      "mae": 6.250658300688773,
+      "r2": -0.03063970407880401
+    },
+    "test_metrics": {
+      "label": "test",
+      "mse": 58.50446435205249,
+      "rmse": 7.648821108644945,
+      "mae": 6.464829104748845,
+      "r2": -0.03904877820275954
+    },
+    "hyperparameters": {
+      "n_estimators": 200,
+      "max_depth": 12,
+      "min_samples_leaf": 4,
+      "max_features": 0.6,
+      "n_jobs": -1,
+      "random_state": 42
+    },
+    "trained_at": "20260228_152547",
+    "status": "TRAINED"
+  },
+  {
+    "algorithm": "gradient_boosting",
+    "artifact_name": "gradient_boosting_20260228_152547.joblib",
+    "artifact_path": "/Users/tzl/Downloads/Adilah_Project/artifacts/models/gradient_boosting_20260228_152547.joblib",
+    "artifact_checksum": "de5f5e8a4a13a802bb99822f6afe4cfebe912710476e1b61031306b4537b6fc6",
+    "size_kb": 105.4,
+    "schema_version": "v1.0",
+    "feature_count": 40,
+    "train_metrics": {
+      "label": "train",
+      "mse": 51.99546126440473,
+      "rmse": 7.210787839369893,
+      "mae": 5.999470796892783,
+      "r2": -1.0722843502009027e-07
+    },
+    "val_metrics": {
+      "label": "val",
+      "mse": 58.14232611370219,
+      "rmse": 7.625111547623562,
+      "mae": 6.251784374072097,
+      "r2": -0.031056313744299624
+    },
+    "test_metrics": {
+      "label": "test",
+      "mse": 58.47813153722532,
+      "rmse": 7.647099550628678,
+      "mae": 6.4629864392125,
+      "r2": -0.038581103139397444
+    },
+    "hyperparameters": {
+      "n_estimators": 300,
+      "learning_rate": 0.05,
+      "max_depth": 5,
+      "subsample": 0.8,
+      "min_samples_leaf": 5,
+      "random_state": 42
+    },
+    "trained_at": "20260228_152547",
+    "status": "TRAINED"
+  }
+]

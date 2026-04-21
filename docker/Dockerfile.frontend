@@ -1,0 +1,21 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copy package files and install deps
+COPY package.json package-lock.json* ./
+RUN npm install
+
+# Copy app source
+COPY . .
+
+# Build argument for API URL (baked into the Next.js build)
+ARG NEXT_PUBLIC_API_URL=/api-proxy
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
+# Build the Next.js app
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

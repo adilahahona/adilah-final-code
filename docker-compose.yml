@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: esg_postgres
+    environment:
+      POSTGRES_USER: esg_user
+      POSTGRES_PASSWORD: esg_password
+      POSTGRES_DB: esg_analytics
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U esg_user -d esg_analytics"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../docker/Dockerfile.backend
+    container_name: esg_backend
+    environment:
+      DATABASE_URL: postgresql://esg_user:esg_password@postgres:5432/esg_analytics
+      ADMIN_API_KEY: ${ADMIN_API_KEY:-dev-admin-key-change-me}
+      SERVICE_NAME: esg-analytics
+      SERVICE_VERSION: 1.0.0
+      GIT_SHA: ${GIT_SHA:-local-dev}
+      LOG_LEVEL: INFO
+      ENVIRONMENT: production
+      CORS_ORIGINS: "http://localhost:3000,http://${PUBLIC_HOST:-138.197.194.105}:3000,http://${PUBLIC_HOST:-138.197.194.105}"
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+      - ./artifacts:/app/artifacts
+      - uploads_data:/app/uploads
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile.frontend
+      args:
+        NEXT_PUBLIC_API_URL: /api-proxy
+    container_name: esg_frontend
+    environment:
+      NEXT_PUBLIC_API_URL: /api-proxy
+    ports:
+      - "80:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  uploads_data:
